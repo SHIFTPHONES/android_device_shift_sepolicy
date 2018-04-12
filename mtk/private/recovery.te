@@ -1,0 +1,3 @@
+# allow recovery to get density property
+get_prop(recovery, graphics_config_prop)
+

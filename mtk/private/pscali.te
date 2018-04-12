@@ -1,0 +1,54 @@
+# ==============================================
+# Policy File of /vendor/bin/pscali Executable File
+
+# ==============================================
+# Type Declaration
+# ==============================================
+
+type pscali_exec, exec_type, file_type, vendor_file_type;
+type pscali, domain;
+
+# ==============================================
+# Android Policy Rule
+# ==============================================
+
+# ==============================================
+# NSA Policy Rule
+# ==============================================
+
+# ==============================================
+# MTK Policy Rule
+# ==============================================
+
+# permissive pscali;
+init_daemon_domain(pscali)
+
+allow pscali system_prop:property_service set;
+allow pscali self:capability {dac_read_search dac_override };
+
+allow pscali als_ps_device:chr_file { read open ioctl };
+
+allow pscali kmsg_device:chr_file { open write };
+allow pscali device:dir write; 
+allow pscali block_device:dir search;
+allow pscali property_socket:sock_file write;
+allow pscali nvdata_file:dir search;
+allow pscali nvram_device:blk_file { read write open };
+allow pscali nvdata_file:file { read write getattr open };
+allow pscali init:unix_stream_socket connectto;
+
+allow pscali nvram_device:chr_file { read write open };
+allow pscali nvram_device:blk_file rw_file_perms;
+
+allow pscali nvram_data_file:dir { read open write add_name create getattr setattr search};
+allow pscali nvram_data_file:file { read getattr open write create setattr};
+allow pscali nvram_data_file:lnk_file read;
+
+allow pscali nvdata_file:dir search;
+allow pscali nvdata_file:file rw_file_perms;
+allow pscali nvdata_file:file { read getattr open write create setattr};
+
+allow pscali system_data_file:lnk_file read;
+
+allow pscali sysfs:dir read;
+allow pscali sysfs:file read;

@@ -1,0 +1,2 @@
+# pscali
+/(system\/vendor|vendor)/bin/pscali u:object_r:pscali_exec:s0

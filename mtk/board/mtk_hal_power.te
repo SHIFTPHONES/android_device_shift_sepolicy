@@ -1,0 +1,7 @@
+allow mtk_hal_power ged_srv:dir r_dir_perms;
+allow mtk_hal_power ged_srv:file r_file_perms;
+
+allow mtk_hal_power mediacodec:dir r_dir_perms;
+allow mtk_hal_power mediacodec:file r_file_perms;
+
+#allow mtk_hal_power system_data_file:file rw_file_perms;

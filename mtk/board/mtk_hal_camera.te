@@ -1,0 +1,1 @@
+allow mtk_hal_camera devmap_device:chr_file r_file_perms;

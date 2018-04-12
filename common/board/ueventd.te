@@ -1,0 +1,4 @@
+allow ueventd sysfs_fps:file rw_file_perms;
+allow ueventd sysfs_power_supply:file rw_file_perms;
+allow ueventd sysfs_sx9310:file rw_file_perms;
+allow ueventd sysfs_therm:file rw_file_perms;

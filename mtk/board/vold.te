@@ -1,0 +1,4 @@
+allow vold nvcfg_file:dir r_dir_perms;
+allow vold proc_perfmgr:dir r_dir_perms;
+
+allow vold nvram_data_file:file r_file_perms;

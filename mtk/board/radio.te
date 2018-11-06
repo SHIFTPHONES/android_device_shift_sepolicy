@@ -1,0 +1,6 @@
+# ==============================================
+# MTK Policy Rule
+# ==============================================
+
+#xuxiaohui 2018-01-10 add for Shift6M LED CIT LED Test
+allow radio ktd2037_device:chr_file rw_file_perms;

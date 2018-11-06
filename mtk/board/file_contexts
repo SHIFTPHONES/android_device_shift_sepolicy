@@ -1,5 +1,8 @@
 # System files
 /(system\/vendor|vendor)/bin/hw/android\.hardware\.light@2\.0-service-mediatek u:object_r:mtk_hal_light_exec:s0
 
+#xuxiaohui 2018-01-10 add for Shift6M LED
+/dev/ktd2037_dev u:object_r:ktd2037_device:s0
+
 # pscali
 /(system\/vendor|vendor)/bin/pscali u:object_r:pscali_exec:s0

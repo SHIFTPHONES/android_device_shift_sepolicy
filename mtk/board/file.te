@@ -2,5 +2,4 @@
 # MTK Policy Rule
 # ==============================================
 
-#xuxiaohui 2018-01-10 add for Kodak LED
-type ktd2037_device, dev_type; 
+type sysfs_ktd2037, fs_type, sysfs_type;

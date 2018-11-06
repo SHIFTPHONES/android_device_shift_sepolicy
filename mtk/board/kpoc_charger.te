@@ -15,4 +15,5 @@ allow kpoc_charger bootdevice_block_device:blk_file open;
 # Purpose : add sepolicy for sysfs_power_supply
 allow kpoc_charger sysfs_power_supply:dir r_dir_perms;
 allow kpoc_charger sysfs_power_supply:file rw_file_perms;
-allow kpoc_charger ktd2037_device:chr_file { open read write };
+allow kpoc_charger sysfs_ktd2037:dir search;
+allow kpoc_charger sysfs_ktd2037:file rw_file_perms;

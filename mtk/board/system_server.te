@@ -5,6 +5,3 @@
 # Operation : light hal developing
 # Purpose : light hal interface permission
 binder_call(system_server, mtk_hal_light)
-
-#xuxiaohui 2018-01-10 add for Shift6M LED
-allow system_server ktd2037_device:chr_file rw_file_perms;

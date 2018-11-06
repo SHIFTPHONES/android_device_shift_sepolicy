@@ -1,0 +1,7 @@
+# ==============================================
+# MTK Policy Rule
+# ==============================================
+
+# Operation : light hal developing
+# Purpose : light hal interface permission
+binder_call(system_server, mtk_hal_light)

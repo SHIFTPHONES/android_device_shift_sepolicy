@@ -12,9 +12,10 @@ hwbinder_use(mtk_hal_light)
 binder_call(mtk_hal_light, system_server)
 
 # sysfs
+allow mtk_hal_light sysfs:dir search;
+allow mtk_hal_light sysfs:file rw_file_perms;
 allow mtk_hal_light system_file:dir read;
 allow mtk_hal_light system_file:dir open;
-allow mtk_hal_light sysfs:file rw_file_perms;
 
 # needed for reading lcd-backlight
 allow mtk_hal_light sysfs_leds:lnk_file read;
@@ -27,8 +28,7 @@ allow mtk_hal_light sysfs_ktd2037:file rw_file_perms;
 
 # for reading battery level
 allow mtk_hal_light sysfs_power_supply:dir search;
-allow mtk_hal_light sysfs_power_supply:file read;
-allow mtk_hal_light sysfs_power_supply:file open;
+allow mtk_hal_light sysfs_power_supply:file r_file_perms;
 
 allow mtk_hal_light hwservicemanager_prop:file r_file_perms;
 hal_server_domain(mtk_hal_light,hal_light);

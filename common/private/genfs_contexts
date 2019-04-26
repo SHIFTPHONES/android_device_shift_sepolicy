@@ -1,0 +1,2 @@
+
+genfscon proc /lowmemorykiller u:object_r:proc_lowmemorykiller:s0

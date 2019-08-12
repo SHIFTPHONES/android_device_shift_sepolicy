@@ -1,0 +1,2 @@
+
+allow lmkd proc_vmstat:file r_file_perms;

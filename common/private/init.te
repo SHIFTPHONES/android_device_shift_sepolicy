@@ -1,0 +1,3 @@
+
+# allow init to establish connection and communicate with lmkd
+unix_socket_connect(init, lmkd, lmkd)

@@ -7,6 +7,8 @@ allow lmkd domain:file write;
 # setsched and send kill signals to any registered process
 allow lmkd domain:process { setsched sigkill };
 
+# Used by LMKD to work with EPOLLWAKEUP events.
+allow lmkd self:global_capability2_class_set block_suspend;
 allow lmkd proc_vmstat:file r_file_perms;
 
 # Read /proc/lowmemorykiller

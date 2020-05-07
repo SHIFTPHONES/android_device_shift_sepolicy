@@ -4,6 +4,8 @@ type snap_app, domain, coredomain;
 app_domain(snap_app)
 net_domain(snap_app)
 
+get_prop(snap_app, persist_camera_prop)
+
 # Access standard system services
 allow snap_app app_api_service:service_manager find;
 allow snap_app audioserver_service:service_manager find;

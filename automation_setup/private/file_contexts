@@ -1,0 +1,9 @@
+#
+# Copyright 2021-2022 Fairphone B.V.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+/system/bin/automation_setup        u:object_r:automation_setup_exec:s0
+/system/bin/automation_adb_setup    u:object_r:automation_setup_exec:s0
+/data/userdata_automation(/.*)?     u:object_r:userdata_automation_file:s0

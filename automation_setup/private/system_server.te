@@ -1,0 +1,10 @@
+#
+# Copyright 2021-2022 Fairphone B.V.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# automation_setup is logging errors to kmsg via stdio_to_kmsg. It's calling
+# system services that get their stderr redirected to kmsg as well. These
+# service calls would fail if they don't have write access kmsg.
+allow system_server kmsg_debug_device:chr_file { ioctl open getattr append write };

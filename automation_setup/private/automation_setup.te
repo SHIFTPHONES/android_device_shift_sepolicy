@@ -1,0 +1,44 @@
+#
+# Copyright 2021-2022 Fairphone B.V.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+type automation_setup, domain, coredomain;
+type automation_setup_exec, exec_type, file_type, system_file_type;
+
+init_daemon_domain(automation_setup)
+
+# Allow the script to execute some tools
+allow automation_setup shell_exec:file rx_file_perms;
+allow automation_setup toolbox_exec:file rx_file_perms;
+allow automation_setup system_file:file rx_file_perms;
+
+# Allow file system permissions in /data/userdata_automation
+allow automation_setup userdata_automation_file:dir create_dir_perms;
+allow automation_setup userdata_automation_file:file create_file_perms;
+
+# Allow file system permission to /data/misc/adb/adb_keys
+allow automation_setup adb_keys_file:dir rw_dir_perms;
+allow automation_setup adb_keys_file:file create_file_perms;
+
+# Allow enabling mobile data
+allow automation_setup radio_service:service_manager find;
+binder_call(automation_setup, radio)
+binder_call(radio, automation_setup)
+
+# Allow cmd settings put
+allow automation_setup settings_service:service_manager find;
+binder_call(automation_setup, servicemanager)
+binder_call(servicemanager, automation_setup)
+binder_call(automation_setup, system_server)
+binder_call(system_server, automation_setup)
+
+# Allow setprop
+set_prop(automation_setup, system_prop)
+
+# Allow enabling mock modem for CTS (persist.radio.allow_mock_modem)
+set_prop(automation_setup, radio_control_prop)
+
+# Allow service option "stdio_to_kmsg"
+allow automation_setup kmsg_debug_device:chr_file { ioctl open getattr append write };

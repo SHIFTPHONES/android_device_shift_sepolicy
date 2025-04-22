@@ -1,0 +1,8 @@
+#
+# Copyright 2021-2022 Fairphone B.V.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# /data/userdata_automation
+type userdata_automation_file, file_type, data_file_type, core_data_file_type;
